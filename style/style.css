@@ -1,0 +1,1072 @@
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-BlackItalic.ttf');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: url('../fonts/Lato-ThinItalic.ttf');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+:where(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+}
+
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+a:where([class]) {
+  display: inline-flex;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+:where([fill]:not([fill="none"],
+    [fill^="url"])) {
+  fill: currentColor;
+}
+
+:where([stroke]:not([stroke="none"],
+    [stroke^="url"])) {
+  stroke: currentColor;
+}
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --color-orange: #FF6600;
+  --color-orangeGradient: linear-gradient(46deg, #EF660B 0%, #E89A48 100%);
+  --color-black: #2F2F2F;
+  --color-blue: #5DB4E3;
+  --color-gray: #F2F3F5;
+  --color-gray2: #C9C9C9;
+  --color-gray3: #E4E9F0;
+  --color-white: #FFFFFF;
+  --color-text: #000000;
+
+  --font-family-base: "Lato", sans-serif;
+
+  --border-radius: 10px;
+
+  --container-width: 1180px;
+  --container-padding-x: 20px;
+
+  --transition-duration: .2s;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.container, .promo {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  line-height: 1.2;
+  text-align: center;
+}
+
+h1 {
+  font-size: 55px;
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 900;
+  font-style: normal;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h7 {
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+a {
+  color: #000000;
+  text-decoration: underline rgba(255, 255, 255, 0);
+  transition: var(--transition-duration);
+}
+
+a:hover {
+  color: var(--color-orange);
+  transition: var(--transition-duration);
+  text-decoration: underline rgba(255, 102, 0, 1);
+}
+
+a.button {
+  text-decoration: none;
+}
+
+.hidden-1300 {
+  display: none;
+}
+
+.hidden-1120 {
+  display: block;
+}
+
+.header {
+  padding-block: 15px;
+}
+
+.header-above {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  padding-bottom: 15px;
+}
+
+.header-below {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 44px;
+  padding-top: 15px;
+  border-top: 1px solid #D8D8D8;
+  width: 100%;
+}
+
+.header-below-social {
+  display: none;
+}
+
+.header-above-image,
+.search-short,
+.phone-short {
+  display: none;
+}
+
+.header-menu-list {
+  display: flex;
+  column-gap: 25px;
+}
+
+.header-menu-item {
+  position: relative;
+}
+
+.header-menu-link {
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.header-menu-link.has-dropdown::after {
+  content: '^';
+  position: absolute;
+  bottom: 15%;
+  right: -12px;
+  width: 0;
+  height: 8px;
+  transform: rotate(180deg);
+}
+
+.header-logo {
+  flex-shrink: 0;
+}
+
+.header-contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.header-contact-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 5px;
+  flex-shrink: 0;
+}
+
+.header-contact-social-image img:hover {
+  filter: brightness(.9);
+  transition: var(--transition-duration);
+}
+
+.button {
+  display: inline-flex;
+  height: 52px;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  padding-inline: 25px;
+  border-radius: var(--border-radius);
+  font-size: 18px;
+  white-space: nowrap;
+  border: 0;
+  outline: 0;
+  max-width: 340px;
+}
+
+.button::before {
+  background: var(--color-orangeGradient);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all .2s;
+  border-radius: 10px;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.header-burger-button {
+  display: none;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+  display: none;
+}
+
+.input {
+  border-radius: var(--border-radius);
+  padding-inline: 20px;
+  width: 100%;
+  max-width: 200px;
+  background-color: var(--color-white);
+  border: 0;
+  outline: 0;
+  transition: var(--transition-duration);
+}
+
+.input::placeholder {
+  color: #6F6F6F;
+}
+
+.header .container {
+  padding-bottom: 0;
+}
+
+.header-below-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 44px;
+}
+
+.header-below-search {
+  font-size: 14px;
+  height: 40px;
+  padding: 0 17px 0 38px;
+  background: #F2F2F2 url("../images/search.png") no-repeat 17px center;
+  background-size: 11px;
+}
+
+.header-below-search:hover {
+  filter: brightness(.95);
+  transition: var(--transition-duration);
+}
+
+.header-below-address {
+  display: none;
+}
+
+.header-contact-button {
+  height: 42px;
+  padding-inline: 16px;
+  font-size: 14px;
+  border: 1px solid #FF6600;
+  color: #FF6600;
+  background-color: transparent;
+}
+
+.header-contact-button:hover {
+  background: var(--color-orangeGradient);
+  color: var(--color-white);
+  border: 1px solid transparent;
+}
+
+.promo {
+  padding-inline: 60px;
+}
+
+.container, .promo {
+  padding-inline: 60px;
+  padding-bottom: 100px;
+  width: 100%;
+}
+
+.banner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 230px 50px 230px;
+  row-gap: 25px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.79) 100%), url('../images/banner-bg.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 40px;
+  height: 533px;
+}
+
+.banner-title {
+  color: var(--color-white);
+}
+
+.banner-text {
+  color: var(--color-white);
+}
+
+.banner-button {
+  color: var(--color-white);
+  background: linear-gradient(46deg, #EF660B 0%, #EF660B 100%);
+}
+
+.partners {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+}
+
+/* СТАТИСТИКА */
+.stats-title {
+  padding: 0 100px 40px 100px;
+}
+
+.stats-benefits {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.benefits-card {
+  width: 100%;
+  background-color: var(--color-gray);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.benefits-card:last-child {
+  background: url('../images/cup.png') right 25% / 110px auto no-repeat, var(--color-orangeGradient);
+  background-repeat: no-repeat;
+  color: var(--color-white);
+}
+
+.benefits-card:last-child .benefits-card-list li::before {
+    width: 22px;
+    height: 22px;
+    content: url("../images/list-icon-4.svg");
+}
+
+.benefits-card * {
+  text-align: left;
+}
+
+.benefits-card-title {
+  padding-left: 35px;
+}
+
+.benefits-card-list {
+  padding-top: 25px;
+}
+
+.benefits-card-list li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.benefits-card-list li {
+    display: flex;
+    align-items: flex-start;
+}
+
+.benefits-card-list li::before {
+    content: "";
+    width: 25px;
+    height: 23px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.benefits-card-list li:nth-of-type(1)::before {
+    content: url("../images/list-icon-1.svg");
+}
+
+.benefits-card-list li:nth-of-type(2)::before {
+    content: url("../images/list-icon-2.svg");
+}
+
+.benefits-card-list li:nth-of-type(3)::before {
+    content: url("../images/list-icon-3.svg");
+}
+
+.benefits-card-text:last-child {
+  padding: 25px 0 0 35px;
+}
+
+.stats-button-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  padding: 40px 0 0 35px;
+}
+
+.stats-button.button::before {
+  background: none;
+}
+
+.stats-button {
+  transition: var(--transition-duration);
+}
+
+.stats-button:hover {
+  color: var(--color-orange);
+}
+
+.stats-data {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  padding-top: 20px;
+}
+
+.status-data-card {
+  flex: 1 1 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: var(--color-gray);
+  border-radius: 20px;
+  padding: 20px;
+  height: 165px;
+}
+
+.status-data-card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.status-data-card-header h1 {
+  color: #2F2F2F;
+}
+
+.status-data-card-header h4 {
+  text-align: left;
+}
+
+.status-data-card-header h4 {
+  padding: 0 10px 0 0;
+  word-break: normal;
+}
+
+@media (max-width: 1300px) {
+
+  .container, .promo {
+    padding-inline: 90px;
+    padding-bottom: 80px;
+  }
+
+  .header-contact-phone,
+  .header-below-search {
+    display: none;
+  }
+
+  .search-short,
+  .phone-short {
+    display: block;
+    flex-shrink: 0;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--color-gray);
+  }
+
+  .header-contact {
+    column-gap: 10px;
+  }
+
+  .header-contact-social {
+    margin: 0 20px;
+  }
+
+  .header-logo-image {
+    width: 141px;
+    height: 44px;
+  }
+
+  .header-menu-link {
+    font-size: 14px;
+  }
+
+  .banner {
+    padding: 0 250px 40px 250px;
+    height: 416px;
+    row-gap: 20px;
+  }
+
+    h1 {
+    font-size: 38px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  .partners-logo:last-child {
+    display: none;
+  }
+
+  .benefits-card-title {
+    padding-left: 0;
+  }
+
+  .stats-title {
+    padding: 0 150px 20px 150px;
+  }
+
+  .benefits-card {
+    padding: 20px;
+  }
+
+  .benefits-card-list {
+    padding-top: 20px;
+  }
+
+  .benefits-card-list li {
+    font-size: 14px;
+  }
+
+  .benefits-card-text:last-child {
+    padding: 25px 0 0 0;
+  }
+
+  .benefits-card-list li:not(:last-child) {
+      margin-bottom: 10px;
+  }
+
+  .stats-button-block {
+    column-gap: 10px;
+    padding: 30px 0 0 0;
+  }
+
+  .status-data-card-header {
+    flex-direction: column;
+    column-gap: 10px;
+    align-items: flex-start;
+  }
+
+  .status-data-card-header h4 {
+    padding: 5px 0 0 0;
+    word-break: normal !important;
+  }
+
+  .stats-button {
+    font-size: 14px;
+    height: 48px;
+  }
+
+}
+
+@media (max-width: 1120px) {
+
+  .container, .promo {
+    padding-inline: 45px;
+  }
+
+  .banner {
+    padding: 0 100px 22px 100px;
+    height: 410px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, #000 100%), url('../images/banner-bg.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .banner-text {
+    padding-inline: 140px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding-inline: 20px;
+    height: 48px;
+  }
+
+  .header-logo-image {
+    width: 95px;
+    height: 30px;
+  }
+
+  .header-above {
+    padding: 0;
+  }
+
+  .header-below,
+  .header-contact-address,
+  .header-contact-button,
+  .phone-short {
+    display: none;
+  }
+
+  .header-above-image,
+  .header-contact-phone {
+    display: block;
+  }
+
+  .header-contact-phone a h3 {
+    font-size: 18px;
+  }
+
+  .search-short,
+  .phone-short {
+    padding: 7px;
+    border-radius: 5px;
+  }
+
+  .search-short img,
+  .phone-short img {
+    width: 12px;
+  }
+
+  .header-contact-social-image img {
+    width: 25px;
+    height: auto;
+  }
+
+  .header-burger-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    background: var(--color-orangeGradient);
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+  }
+
+  .partners-logo:nth-last-child(2) {
+    display: none;
+  }
+
+  .stats-benefits {
+    column-gap: 10px;
+  }
+
+  .stats-title {
+    padding: 0 100px 20px 100px;
+  }
+
+  .stats-button {
+    display: none;
+  }
+
+  .benefits-card-text:last-child {
+    padding: 20px 0 0 0;
+  }
+
+  .stats-button-block {
+    padding: 20px 0 0 0;
+  }
+
+  .stats-data {
+    column-gap: 10px;
+    padding-top: 20px;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+  }
+
+  .status-data-card {
+    min-width: 49%;
+  }
+
+  .status-data-card:nth-of-type(3), .status-data-card:nth-of-type(4) {
+    margin-top: 10px;
+  }
+  
+  .status-data-card-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 300px 0 0;
+  }
+  
+  .benefits-card-title {
+    font-size: 18px;
+  }
+  
+  .status-data-card-header h4 {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 880px) {
+
+  .banner {
+    padding: 0 35px 28px 35px;
+    height: 400px;
+  }
+
+  .banner-text {
+    padding-inline: 0px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  .header-logo-image {
+    width: 72px;
+    height: 23px;
+  }
+
+  .header-above-image {
+    width: 101px;
+    height: 19px;
+  }
+
+  .header-contact-phone,
+  .header-contact-social,
+  .header-below-menu,
+  .header-below-image,
+  .header-below-input {
+    display: none;
+  }
+
+  .phone-short {
+    display: block;
+  }
+
+  .header-above {
+    padding-bottom: 10px;
+  }
+
+  .header-below {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #D8D8D8;
+    width: 100%;
+  }
+
+  .header-below-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .header-below-social-image img:hover {
+    filter: brightness(.9);
+  }
+
+  .header-below-address {
+    display: block;
+  }
+
+  .header-below-address h6 {
+    font-size: 10px;
+  }
+
+  .header-contact-social-image img {
+    width: 29px;
+    height: auto;
+  }
+
+  .gre {
+    display: none;
+  }
+
+  .stats-title {
+    padding: 0 20px 20px 20px;
+  }
+
+  .status-data-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .stats-data {
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+  }
+
+  .status-data-card {
+    height: 158px;
+    min-width: 48%;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  .header {
+    padding-inline: 0px;
+  }
+
+  .container {
+    padding-inline: 20px;
+  }
+
+  .promo {
+    padding-inline: 0px;
+  }
+
+  .banner {
+    padding: 0 35px 28px 35px;
+    border-radius: 25px;
+    height: 400px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, #000 100%), url('../images/banner-bg-mob.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .partners {
+    padding-inline: 20px;
+  }
+
+  .stats-benefits {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .partners-logo:nth-last-child(3) {
+    display: none;
+  }
+
+}
